@@ -1,32 +1,58 @@
 <html>
-<head>
-<title>Dialer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" 
-integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" 
-crossorigin="anonymous">
-<link rel="stylesheet" href="phone.css"
-</head>
-<body>
-<div class='bar' id='tab_bar'>
-<button class="pure-button" id="button_dialer">Dialer</button>
-<button class="pure-button" id="button_list">Contact List</button>
-<button class="pure-button" id="button_form">Add Contact</button>
-</div
-<div class='container' id='content'>
-<div class='content_screen' id='content_dialer'>
-</div>
-<div class='content_screen' id='content_list'>
-</div>
-<div class='content_screen' id='content_form'>
-<form class="pure-form pure-form-stacked">
-	  <label for="name">Name</label>
-	  <input id="name" placeholder="Jane Smith">
-</form>
-</div>
-</div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="phone.js"></script>
-</body>
+	<head>
+		<title>Dialer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" 
+		integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" 
+		crossorigin="anonymous">
+		<link rel="stylesheet" href="phone.css">
+	</head>
+	<body>
+		<div class='bar' id='tab_bar'>
+			<button class="pure-button" id="button_dialer">Dialer</button>
+			<button class="pure-button" id="button_list">Contact List</button>
+			<button class="pure-button" id="button_form">Add Contact</button>
+		</div>
+		<div class='container' id='content'>
+			<div class='content_screen' id='content_dialer'>
+				<h2>Dialer</h2>	
+				<div class="numpad" id='dialer'>
+					<form class="pure-form" id="number">
+						<input class = "pure-input-1" type="text" name="number">
+					</form>
+				    <button class="pure-button" id="btn_1">1</button>
+				    <button class="pure-button" id="btn_2">2</button>
+				    <button class="pure-button" id="btn_3">3</button>
+				    <button class="pure-button" id="btn_4">4</button>
+				    <button class="pure-button" id="btn_5">5</button>
+				    <button class="pure-button" id="btn_6">6</button>
+				    <button class="pure-button" id="btn_7">7</button>
+				    <button class="pure-button" id="btn_8">8</button>
+				    <button class="pure-button" id="btn_9">9</button>
+				    <button class="pure-button" id="btn_*">*</button>
+				    <button class="pure-button" id="btn_0">0</button>
+				    <button class="pure-button" id="btn_#">#</button>
+				    <div class="numpad" id='cmd'>
+						<button class="pure-button" id="btn_dial">Dial</button>
+				    	<button class="pure-button" id="btn_clr">Clear</button>
+					</div>
+				</div>
+			</div>
+			<div class='content_screen' id='content_list'>
+			</div>
+			<div class='content_screen' id='content_form'>
+				<h2>Add Contact</h2>	
+				<form class="pure-form pure-form-stacked" id='list_form'>
+					<fieldset>
+						<label for="name">Name</label>
+						<input id="name" placeholder="Jane Smith">
+						<label for="email">Email</label>
+        				<input id="email" type="email" placeholder="Email">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="phone.js"></script>
+	</body>
 </html>

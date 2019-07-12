@@ -1,8 +1,7 @@
 div.bar{
 	background:#cbd0d6;
+	padding-top: 10px;
 	padding-left:10px;
-	padding-top:5px;
-	width:400px;
 }
 
 div.content_screen{
@@ -10,7 +9,25 @@ div.content_screen{
 	margin-left: 20px;
 }
 
-button{
+div #dialer{
+	background:#cbd0d6;
+	width:190px;
+	padding: 5px 5px;
+	display: inline-block;
+}
+
+div.numpad button{
+	width: 60px;
+	margin-top: 5px;
+	border: 1px solid black;
+}
+
+div #cmd button{
+	margin-top: 10px;
+	width: 92px;
+}
+
+div.bar button{
 	width:120px;
 }
 
