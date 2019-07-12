@@ -1,0 +1,19 @@
+$(document).ready(function(){
+	$("#content_dialer").show();
+	$("#content_list").hide();
+	$("#content_form").hide();
+});
+$("#button_dialer").click(function(){
+	$("#content_dialer").show();
+	$("#content_list").hide();
+	$("#content_form").hide();
+});
+$("#button_list").click(function(){
+	$("#content_dialer").hide();
+	$("#content_list").show();
+	$("#content_form").hide();
+});$("#button_form").click(function(){
+	$("#content_dialer").hide();
+	$("#content_list").hide();
+	$("#content_form").show();
+});

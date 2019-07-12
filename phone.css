@@ -1,0 +1,23 @@
+div.bar{
+	background:#cbd0d6;
+	padding-left:10px;
+	padding-top:5px;
+	width:400px;
+}
+
+div.content_screen{
+	margin-top:15px;
+	margin-left: 20px;
+}
+
+button{
+	width:120px;
+}
+
+button.pure-button:focus{
+	background: white;
+}
+
+button.pure-button:hover{
+	background: white;
+}
