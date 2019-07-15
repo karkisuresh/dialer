@@ -18,7 +18,7 @@
 				<h2>Dialer</h2>	
 				<div class="numpad" id='dialer'>
 					<form class="pure-form" id="number">
-						<input class = "pure-input-1" type="text" name="number">
+						<input class = "pure-input-1" type="text" name="number" id = "value" readonly style="background: white"> 
 					</form>
 				    <button class="pure-button" id="btn_1">1</button>
 				    <button class="pure-button" id="btn_2">2</button>
@@ -29,9 +29,9 @@
 				    <button class="pure-button" id="btn_7">7</button>
 				    <button class="pure-button" id="btn_8">8</button>
 				    <button class="pure-button" id="btn_9">9</button>
-				    <button class="pure-button" id="btn_*">*</button>
+				    <button class="pure-button" id="btn_ast">*</button>
 				    <button class="pure-button" id="btn_0">0</button>
-				    <button class="pure-button" id="btn_#">#</button>
+				    <button class="pure-button" id="btn_hash">#</button>
 				    <div class="numpad" id='cmd'>
 						<button class="pure-button" id="btn_dial">Dial</button>
 				    	<button class="pure-button" id="btn_clr">Clear</button>
@@ -39,16 +39,33 @@
 				</div>
 			</div>
 			<div class='content_screen' id='content_list'>
+				<h2>Contact List</h2>
+				<div class='list' id='contact_list'>
+					<button class="pure-button">Robert Drake</button>
+				    <button class="pure-button">Emma Frost</button>
+				    <button class="pure-button">Doren Green</button>
+				    <button class="pure-button">Jean Grey</button>
+				    <button class="pure-button">James Howlett</button>
+				    <button class="pure-button">Ororo Monroe</button>
+				    <button class="pure-button">Arun Sanjel</button>
+				    <button class="pure-button">Sumit Shrestha Khimbaja</button>
+				    <button class="pure-button">Suresh Karki</button>
+				    <button class="pure-button">Pratistha Shrestha</button>
+				    <button class="pure-button">Tim Arterbury</button>
+				    <button class="pure-button">Askar K</button>
+				</div>
 			</div>
 			<div class='content_screen' id='content_form'>
 				<h2>Add Contact</h2>	
-				<form class="pure-form pure-form-stacked" id='list_form'>
-					<fieldset>
-						<label for="name">Name</label>
-						<input id="name" placeholder="Jane Smith">
-						<label for="email">Email</label>
-        				<input id="email" type="email" placeholder="Email">
-					</fieldset>
+				<form class="pure-form pure-form-stacked" id='list_form' onsubmit="return false;">
+					<label for="name">Name</label>
+					<input id="name" placeholder="Jane Smith">
+					<label for="phone">Phone number</label>
+    				<input id="phone" type="text" placeholder="123-456-7890">
+    				<label for="email">Email address</label>
+    				<input id="email" type="email" placeholder="jane.smith@colorado.edu">
+    				<button type="submit" class="pure-button form" id="btn_add">Add Contact</button>
+    				<button class="pure-button form" id="btn_clear">Clear</button>
 				</form>
 			</div>
 		</div>
