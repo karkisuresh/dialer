@@ -1,35 +1,67 @@
 var display_value = "";
 
+var tabIndex = 0;
+
+var tabs = {
+	0: dialer,
+	1: contact_list,
+	2: form,
+	3: gestures
+};
+
 var dialer = function(){
 	$("#content_dialer").show();
 	$("#content_list").hide();
 	$("#content_form").hide();
+	$("#content_gestures").hide();
 	$("#button_dialer").css("background", "white");
 	$("#button_list").css("background", "");
 	$("#button_form").css("background", "");
-}
+	$("#button_gestures").css("background", "");
+
+};
 
 $(document).ready(dialer);
 
 $("#button_dialer").click(dialer);
 
-$("#button_list").click(function(){
+var contact_list = function(){
 	$("#content_dialer").hide();
 	$("#content_list").show();
 	$("#content_form").hide();
+	$("#content_gestures").hide();
 	$("#button_list").css("background", "white");
 	$("#button_dialer").css("background", "");
 	$("#button_form").css("background", "");
-});
+	$("#button_gestures").css("background", "");
+};
+
+$("#button_list").click(contact_list);
+
+var gestures = function(){
+	$("#content_dialer").hide();
+	$("#content_list").hide();
+	$("#content_form").hide();
+	$("#content_gestures").show();
+	$("#gesture_output").val("ready");
+	$("#button_list").css("background", "");
+	$("#button_dialer").css("background", "");
+	$("#button_form").css("background", "");
+	$("#button_gestures").css("background", "white");
+};
+
+$("#button_gestures").click(gestures);
 
 var form = function(){
 	$("#content_dialer").hide();
 	$("#content_list").hide();
 	$("#content_form").show();
+	$("#content_gestures").hide();
 	$("#button_form").css("background", "white");
 	$("#button_dialer").css("background", "");
 	$("#button_list").css("background", "");
-}
+	$("#button_gestures").css("background", "");
+};
 
 $("#button_form").click(form);
 
@@ -111,6 +143,47 @@ $("#btn_clear").click(function(){
 $("#btn_add").click(function(){
 	alert("Sorry the functionality is not supported at this time.")
 });
+
+var downX = 0;
+var downY = 0;
+
+var mousedown = function(event){
+	downX = event.clientX;
+	downY = event.clientY;
+	$("#gesture_output").val("mouse down");
+};
+
+var mouseup = function(event){
+	upX = event.clientX;
+	upY = event.clientY;
+	if(upX < downX){
+		$("#gesture_output").val("swipe left");
+		// if (tabIndex!=0){
+			
+	}
+	else if (upX > downX){
+		$("#gesture_output").val("swipe right");
+	}
+	else{
+		$("#gesture_output").val("mouse up");
+	}
+	
+	// if(upY < downY){
+		// $("#gesture_output").val("swipe up");
+	// }
+	// else if (upY > downY){
+		// $("#gesture_output").val("swipe down");
+	// }
+	// else{
+		// $("#gesture_output").val("mouse up");
+	// }
+};
+
+$("#gesture_area").mousedown(mousedown);
+$("#gesture_area").mouseup(mouseup);
+
+
+
 
 
 
