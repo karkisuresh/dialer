@@ -1,15 +1,7 @@
 var display_value = "";
 
-var tabIndex = 0;
-
-var tabs = {
-	0: dialer,
-	1: contact_list,
-	2: form,
-	3: gestures
-};
-
 var dialer = function(){
+	tabIndex = 0;
 	$("#content_dialer").show();
 	$("#content_list").hide();
 	$("#content_form").hide();
@@ -26,6 +18,7 @@ $(document).ready(dialer);
 $("#button_dialer").click(dialer);
 
 var contact_list = function(){
+	tabIndex = 1;
 	$("#content_dialer").hide();
 	$("#content_list").show();
 	$("#content_form").hide();
@@ -39,6 +32,7 @@ var contact_list = function(){
 $("#button_list").click(contact_list);
 
 var gestures = function(){
+	tabIndex = 3;
 	$("#content_dialer").hide();
 	$("#content_list").hide();
 	$("#content_form").hide();
@@ -53,6 +47,7 @@ var gestures = function(){
 $("#button_gestures").click(gestures);
 
 var form = function(){
+	tabIndex = 2;
 	$("#content_dialer").hide();
 	$("#content_list").hide();
 	$("#content_form").show();
@@ -64,6 +59,10 @@ var form = function(){
 };
 
 $("#button_form").click(form);
+
+var tabIndex = 0;
+
+var tabs = [dialer, contact_list, form, gestures];
 
 $("#btn_1").click(function(){
 	display_value = display_value.concat("1");
@@ -150,16 +149,14 @@ var downY = 0;
 var mousedown = function(event){
 	downX = event.clientX;
 	downY = event.clientY;
-	$("#gesture_output").val("mouse down");
+	if (tabIndex == 3) { $("#gesture_output").val("mouse down"); }
 };
 
 var mouseup = function(event){
 	upX = event.clientX;
 	upY = event.clientY;
 	if(upX < downX){
-		$("#gesture_output").val("swipe left");
-		// if (tabIndex!=0){
-			
+		$("#gesture_output").val("swipe left");		
 	}
 	else if (upX > downX){
 		$("#gesture_output").val("swipe right");
@@ -179,8 +176,54 @@ var mouseup = function(event){
 	// }
 };
 
+var switchtabs = function(event){
+	upX = event.clientX;
+	upY = event.clientY;
+	if(upX < downX){
+		if (tabIndex != 0)
+		{
+			tabIndex = tabIndex - 1;
+			func = tabs[tabIndex];
+			func();
+		}			
+	}
+	else if (upX > downX){
+		if (tabIndex != tabs.length-1)
+		{
+			tabIndex = tabIndex + 1;
+			func = tabs[tabIndex];
+			func();
+		}	
+	}
+}
+
 $("#gesture_area").mousedown(mousedown);
 $("#gesture_area").mouseup(mouseup);
+
+$("#swipe_area").mousedown(mousedown);
+$("#swipe_area").mouseup(switchtabs);
+
+$(document).keydown(function(event){
+	switch(event.which){
+		case 37:
+			if (tabIndex != 0)
+			{
+				tabIndex = tabIndex - 1;
+				func = tabs[tabIndex];
+				func();
+			}
+			break;
+		case 39:
+			if (tabIndex != tabs.length-1)
+			{
+				tabIndex = tabIndex + 1;
+				func = tabs[tabIndex];
+				func();
+			}
+			break;
+		default: return;	
+	}
+});
 
 
 
