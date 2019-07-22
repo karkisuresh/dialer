@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Assignment 4</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" 
+		integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" 
+		crossorigin="anonymous">
+		<link rel="stylesheet" href="access.css">
+	</head>
+	<body>
+		<div class='menu' id='site_menu' role="navigation">
+			<a href="index.html" role="button" id="home_button" class="menu_button" aria-label="home button link">Home</a>
+			<a href="index.html" role="button" id="archive_button" class="menu_button" aria-label="archive button" aria-label="archive button link">Archive</a>
+			<a href="index.html" role="button" id="about_button" class="menu_button" aria-label="about button link">About</a>
+		</div>
+		<div class="container" id="mainbody" role="main">
+			<h1>Top level heading</h1>
+			<img alt="Random Image" src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"/>
+			<h3>Sub heading</h3>
+			<p>
+			Some content here
+			</p>
+			<h3>List</h3>
+			<p>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</p>
+			<div class="pure-form pure-form-stacked" id="comment_form">
+				<h3>Post a comment</h3>
+				<label for="name"> Name </label>
+				<input id="name" type="text">
+				<label for="email">Email Address</label>
+				<input id="email" type="email">
+				<label for="comment">Comment</label>
+				<textarea rows="4" cols="50" name="comment" aria-label="comment area"></textarea>
+				<button class="pure-button" id="submit" onclick="alert('comment submitted')" aria-label="comment submit button"> Submit</button>  
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="access.js"></script>
+	</body>
+</html>
