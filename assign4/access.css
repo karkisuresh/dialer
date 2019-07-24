@@ -37,3 +37,13 @@ a.menu_button{
 	width: 10%; /* Could be more or less, depending on screen size */
 	color: red;
 }
+
+.container{
+	width:800px;
+	text-align: justify;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
