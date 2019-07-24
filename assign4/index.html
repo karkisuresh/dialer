@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 	<head>
 		<title>Assignment 4</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,34 +9,58 @@
 	</head>
 	<body>
 		<div class='menu' id='site_menu' role="navigation">
-			<a href="index.html" role="button" id="home_button" class="menu_button" aria-label="home button link">Home</a>
-			<a href="index.html" role="button" id="archive_button" class="menu_button" aria-label="archive button" aria-label="archive button link">Archive</a>
-			<a href="index.html" role="button" id="about_button" class="menu_button" aria-label="about button link">About</a>
+			<a href="#" role="button" id="home_button" class="menu_button" aria-label="home button">Home</a>
+			<a href="#" role="button" id="archive_button" class="menu_button" aria-label="archive button" aria-label="archive button">Archive</a>
+			<a href="#" role="button" id="about_button" class="menu_button" aria-label="about button">About</a>
 		</div>
 		<div class="container" id="mainbody" role="main">
 			<h1>Top level heading</h1>
-			<img alt="Random Image" src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"/>
-			<h3>Sub heading</h3>
+			<h2>Sub heading</h2>
 			<p>
-			Some content here
+				Some content here
 			</p>
-			<h3>List</h3>
+			<img alt="Random Image" src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg" aria-describedby="description"/>
+			<p id="description" style="display:None">
+				Image description
+			</p>
+			<h2>Table</h2>
 			<p>
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-				</ul>
+				<table class = "pure-table">
+					<thead>
+					<tr>
+						<th>Week1</th>
+						<th>Week2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>100</td>
+						<td>90</td>
+					</tr>
+					<tr>
+						<td>60</td>
+						<td>55</td>
+					</tr>
+					</tbody>
+				</table>
 			</p>
 			<div class="pure-form pure-form-stacked" id="comment_form">
-				<h3>Post a comment</h3>
+				<h2>Post a comment</h2>
 				<label for="name"> Name </label>
 				<input id="name" type="text">
 				<label for="email">Email Address</label>
 				<input id="email" type="email">
 				<label for="comment">Comment</label>
-				<textarea rows="4" cols="50" name="comment" aria-label="comment area"></textarea>
-				<button class="pure-button" id="submit" onclick="alert('comment submitted')" aria-label="comment submit button"> Submit</button>  
+				<textarea rows="4" cols="50" id="comment" aria-label="comment area"></textarea>
+				<button class="pure-button" id="submit" aria-label="comment submit button">Submit</button>  
+			</div>
+			<div class="modal" id="alert-modal" tabindex="0">
+				<div class="alert" id="submit-alert" role="alert dialog" aria-labelledby="alert-text" aria-describedby="close-description">
+					<p id="alert-text">Comment submitted</p>
+					<p id="close-description" style="display:None">
+						The comment has been submitted. Please press the Escape button or click anywhere on the screen to close the alert message.
+					</p>
+				</div>
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
