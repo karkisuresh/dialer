@@ -1,0 +1,65 @@
+div.bar{
+	background:#cbd0d6;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+div.content_screen{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+div #dialer{
+	width:250px;
+	padding: 5px 5px;
+	display: inline-block;
+}
+
+div.numpad button{
+	width: 80px;
+	margin-top: 10px;
+	height: 40px;
+}
+
+div #cmd button{
+	margin-top: 10px;
+	width: 122px;
+	height: 40px;
+}
+
+div.bar button{
+	width:140px;
+}
+
+button.pure-button{
+	background:#f0f0f0;
+}
+
+#value{
+	text-align: right;
+}
+
+#list_form label{
+	margin-top: 15px;
+}
+
+#list_form input{
+	width: 250px;
+}
+
+button.form{
+	margin-top: 15px;
+}
+
+div.list{
+	width: 480px;
+}
+
+div.list button{
+	margin-top: 10px;
+}
+
+#switch-mode{
+	margin-top: 15px;
+	margin-left: 15px;
+}
