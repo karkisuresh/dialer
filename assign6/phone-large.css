@@ -5,12 +5,15 @@ div.bar{
 
 body{
 	background: black;
-	font-size: 200%;
+	font-size: 150%;
 }
 
 div.content_screen{
 	margin-top: 20px;
 	margin-left: 20px;
+	margin-bottom: 50px;
+	margin-right: 50px;
+	color: white;
 }
 
 div #dialer{
@@ -28,21 +31,27 @@ div #cmd button{
 	margin-top: 10px;
 }
 
-div.bar button{
-	width:20%;
-}
-
 button.pure-button{
-	background:#f0f0f0;
+	background:black;
+	color: white;
+	border: 2px solid white;
 }
 
 #value{
 	text-align: right;
+	color: white;
+	background: black;
 }
 
 #list_form label{
 	margin-top: 15px;
 	color:white;
+}
+
+#list_form input{
+	color : white;
+	background: black;
+	border: 2px solid white;
 }
 
 button.form{
@@ -57,11 +66,18 @@ div.list button{
 	margin-top: 10px;
 }
 
-#switch-mode{
+#option-bar{
 	margin-top: 15px;
 	margin-left: 15px;
 }
 
+a.pure-button{
+	background:black;
+	color: white;
+	border: 2px solid white;
+}
+	
 h2{
 	color: white;
 }
+

@@ -4,7 +4,7 @@ var dialer = function(){
 	$("#content_dialer").show();
 	$("#content_list").hide();
 	$("#content_form").hide();
-	$("#button_dialer").css("background", "white");
+	$("#content_about").hide();
 	$("#button_list").css("background", "");
 	$("#button_form").css("background", "");
 }
@@ -17,7 +17,16 @@ $("#button_list").click(function(){
 	$("#content_dialer").hide();
 	$("#content_list").show();
 	$("#content_form").hide();
-	$("#button_list").css("background", "white");
+	$("#content_about").hide();
+	$("#button_dialer").css("background", "");
+	$("#button_form").css("background", "");
+});
+
+$("#button_about").click(function(){
+	$("#content_dialer").hide();
+	$("#content_list").hide();
+	$("#content_form").hide();
+	$("#content_about").show();
 	$("#button_dialer").css("background", "");
 	$("#button_form").css("background", "");
 });
@@ -26,7 +35,7 @@ var form = function(){
 	$("#content_dialer").hide();
 	$("#content_list").hide();
 	$("#content_form").show();
-	$("#button_form").css("background", "white");
+	$("#content_about").hide();
 	$("#button_dialer").css("background", "");
 	$("#button_list").css("background", "");
 }
@@ -111,6 +120,33 @@ $("#btn_clear").click(function(){
 $("#btn_add").click(function(){
 	alert("Sorry the functionality is not supported at this time.")
 });
+
+var curMode = 0;
+
+$("#switch-mode").click(function(){
+	if (curMode === 0){
+		$("link[href='phone.css']").attr({href : "phone-large.css"});
+		$("#switch-mode").text("Normal Mode");
+		curMode = 1;
+	}
+	else{
+		$("link[href='phone-large.css']").attr({href : "phone.css"});
+		$("#switch-mode").text("High Contrast Mode");
+		curMode = 0;
+	}
+});
+
+$("#increase-font").click(function(){
+	let cursize = parseFloat($("body").css('font-size'));
+	$("body").css('font-size', (cursize * 1.1) + 'px');
+});
+
+$("#decrease-font").click(function(){
+	let cursize = parseFloat($("body").css('font-size'));
+	$("body").css('font-size', (cursize * 0.9) + 'px');
+});
+
+
 
 
 

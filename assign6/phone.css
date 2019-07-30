@@ -7,28 +7,22 @@ div.bar{
 div.content_screen{
 	margin-top: 20px;
 	margin-left: 20px;
+	margin-bottom: 50px;
+	margin-right: 50px;
 }
 
 div #dialer{
-	width:250px;
 	padding: 5px 5px;
 	display: inline-block;
 }
 
 div.numpad button{
-	width: 80px;
+	width: 30%;
 	margin-top: 10px;
-	height: 40px;
 }
 
 div #cmd button{
 	margin-top: 10px;
-	width: 122px;
-	height: 40px;
-}
-
-div.bar button{
-	width:140px;
 }
 
 button.pure-button{
@@ -37,6 +31,7 @@ button.pure-button{
 
 #value{
 	text-align: right;
+	background: white;
 }
 
 #list_form label{
@@ -59,7 +54,7 @@ div.list button{
 	margin-top: 10px;
 }
 
-#switch-mode{
+#option-bar{
 	margin-top: 15px;
 	margin-left: 15px;
 }

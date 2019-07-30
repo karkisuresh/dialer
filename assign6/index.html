@@ -12,27 +12,40 @@
 			<button class="pure-button" id="button_dialer">Dialer</button>
 			<button class="pure-button" id="button_list">Contact List</button>
 			<button class="pure-button" id="button_form">Add Contact</button>
+			<button class="pure-button" id="button_about">About this Project</button>
 		</div>
 		<div class='container' id='content'>
-		<a class="pure-button" id="switch-mode" href="index-large.html">Large mode</a>
+			<div class='options' id='option-bar'>
+				<button class="pure-button" id="increase-font">Increase font</button>
+				<button class="pure-button" id="decrease-font">Decrease font</button>
+				<button class="pure-button" id="switch-mode">High Contrast Mode</button>
+			</div>
 			<div class='content_screen' id='content_dialer'>
 				<h2>Dialer</h2>	
 				<div class="numpad" id='dialer'>
 					<form class="pure-form" id="number">
-						<input class = "pure-input-1" type="text" name="number" id = "value" readonly style="background: white"> 
+						<input class = "pure-input-1" type="text" name="number" id = "value" readonly> 
 					</form>
-				    <button class="pure-button" id="btn_1">1</button>
-				    <button class="pure-button" id="btn_2">2</button>
-				    <button class="pure-button" id="btn_3">3</button>
-				    <button class="pure-button" id="btn_4">4</button>
-				    <button class="pure-button" id="btn_5">5</button>
-				    <button class="pure-button" id="btn_6">6</button>
-				    <button class="pure-button" id="btn_7">7</button>
-				    <button class="pure-button" id="btn_8">8</button>
-				    <button class="pure-button" id="btn_9">9</button>
-				    <button class="pure-button" id="btn_ast">*</button>
-				    <button class="pure-button" id="btn_0">0</button>
-				    <button class="pure-button" id="btn_hash">#</button>
+				    <div id="first-line">
+						<button class="pure-button" id="btn_1">1</button>
+						<button class="pure-button" id="btn_2">2</button>
+						<button class="pure-button" id="btn_3">3</button>
+					</div>
+					<div id ="second-line">
+						<button class="pure-button" id="btn_4">4</button>
+						<button class="pure-button" id="btn_5">5</button>
+						<button class="pure-button" id="btn_6">6</button>
+					</div>
+					<div id="third-line">
+						<button class="pure-button" id="btn_7">7</button>
+						<button class="pure-button" id="btn_8">8</button>
+						<button class="pure-button" id="btn_9">9</button>
+					</div>
+					<div id="fourth-line">
+						<button class="pure-button" id="btn_ast">*</button>
+						<button class="pure-button" id="btn_0">0</button>
+						<button class="pure-button" id="btn_hash">#</button>
+					</div>
 				    <div class="numpad" id='cmd'>
 						<button class="pure-button" id="btn_dial">Dial</button>
 				    	<button class="pure-button" id="btn_clr">Clear</button>
@@ -68,6 +81,30 @@
     				<button type="submit" class="pure-button form" id="btn_add">Add Contact</button>
     				<button class="pure-button form" id="btn_clear">Clear</button>
 				</form>
+			</div>
+			<div class='content_screen' id='content_about'>
+				<h2>About this Project</h2>
+				<p>
+				For this assignment, we used magnifier to navigate through a website and perform an action in High Contrast Mode. 
+				I went to amazon website and performed an action of buying something. The things I learned and challenges faced 
+				while using magnifier on High contrast mode are as follows: 
+				<ul id="challenges">
+					<li>It was difficult distinguishing the background and a window on High Contrast Mode.</li>
+					<li>Similarly, it was difficult to separate between buttons.</li>
+					<li>While using magnifier, there was too little information than it would have been on normal zoom.</li>
+					<li>User needs to scroll more.</li>
+					<li>It was diffcult and annoying at times to distinguish when to slide mouse to see more and when to scroll.</li>
+				</ul>
+				The screenshots of this task is available <a href="https://drive.google.com/open?id=130loKS1PGvcxNMDRbF73E4Ug3DNDiM1C">here</a>
+				</p>
+				<p>
+				We also added multiple features to accomodate low vision users some of which are:
+				<ul id="features">
+					<li>High Contrast Mode</li>
+					<li> Font increase and Decrease buttons</li>
+				</ul>
+				</p>
+				
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
