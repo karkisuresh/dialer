@@ -1,0 +1,14 @@
+div.bar{
+	background:#cbd0d6;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+div.content_screen{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+button.pure-button{
+	background:#f0f0f0;
+}

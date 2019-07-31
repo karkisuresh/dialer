@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>SmartLight</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" 
+		integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" 
+		crossorigin="anonymous">
+		<link rel="stylesheet" href="app.css">
+	</head>
+	<body>
+		<div class='bar' id='tab_bar'>
+			<button class="pure-button" id="button_home">Home</button>
+			<button class="pure-button" id="button_about">About</button>
+		</div>
+		<div class='container' id='content'>
+			<div class='content_screen' id='content_home'>
+				<h2>SmartLight</h2>	
+				<iframe
+				    allow="microphone;"
+				    width="350"
+				    height="430"
+				    src="https://console.dialogflow.com/api-client/demo/embedded/d6815fe8-404a-4372-a39c-11108cba9f5f"></iframe>
+			</div>
+			<div class='content_screen' id='content_about'>
+				<h2>About</h2>
+				<p></p>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
