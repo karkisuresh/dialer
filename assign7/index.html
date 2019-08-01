@@ -17,13 +17,48 @@
 				<h2>SmartLight</h2>	
 				<iframe
 				    allow="microphone;"
-				    width="600"
-				    height="800"
+				    width="350"
+				    height="430"
 				    src="https://console.dialogflow.com/api-client/demo/embedded/d6815fe8-404a-4372-a39c-11108cba9f5f"></iframe>
+				<p>If the above application is not working, please click <a href="https://bot.dialogflow.com/d6815fe8-404a-4372-a39c-11108cba9f5f">here</a></p>
 			</div>
 			<div class='content_screen' id='content_about'>
 				<h2>About</h2>
-				<p></p>
+				<p>
+				For this assignment, I created a conversational bot interface of smart light application which is able to control the light and includes features
+				like knowing the state of light of a room, turning it on or off, change its color, brighten or dim the light and schedule a light to turn on or off at particular time.
+				</p>
+				<p>
+				For this assignment, the bot interface was tested multiple times by a user, the list of changes made after each test
+				considering the results and feedbacks from the user is given below:
+				<h3>Test 1</h3>
+				<ul>
+				<li>The application was not able to detect simple command like "turn on the light" 
+				instead the user had to say "turn the light on". So, I had to include necessary training for it to work properly.
+				</li>
+				<li>The application was able to detect rooms well from the commands except for one command of "Can you turn on the bathroom's light?" where the application was
+					detecting can as a room. So, I had to include necessary training to handle that.
+					</li>
+					<li>
+				Also, from observing the user interaction with the bot, it was found that user like to use short commands such as "light on kitchen" or "bathroom color red" instead of saying the whole sentence and for some cases 
+				the application wasn't able to give the intended result. So, I had to include necessary training to make sure that the correct intent was detected.
+				</li>
+				</ul>
+				<h3>Test 2</h3>
+				<ul>
+				<li>
+				Along with changing the color of light to a specific color, the user mentioned a request to set multiple fun colors like that of a disco bulb. So I added a disco mode and normal mode which user can
+				activate using command such as "disco mode" or "normal mode".
+				</li>
+				<li>
+				As per the feedback of user, the increase brightness and decrease brightness has been changed to just dim and brighten, so instead of just constantly increasing and decreasing brightness,
+				the user can just say dim or enlighten. Dim and enlighten will have predefined brightness level. 
+				</li>
+				<li>
+				I have added a feature where user is able to schedule the light to turn on or off at certain time or date or after a certain duration as user mentioned it as a nice to have feature.
+				So, user is now able to schedule through commands such as "turn off bedroom's light after 30 min".
+				</li>
+				</ul>			 
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
