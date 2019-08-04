@@ -1,22 +1,44 @@
 // this gives us the order of the buttons, which we can use to step through the buttons in various directions
 // since we know the layout, + 1 moves to the next item, -1 previous, +4 is one row down, -4 is one row up
-buttonOrder = ["#oneSwitch", "#twoSwitch", "#button7","#button8","#button9","#buttonDivide","#button4","#button5","#button6","#buttonMultiply","#button1","#button2","#button3","#buttonAdd","#button0","#buttonClear","#buttonEquals","#buttonSubtract"];
+buttonOrder = ["#button7","#button8","#button9","#buttonDivide","#button4","#button5","#button6","#buttonMultiply","#button1","#button2","#button3","#buttonAdd","#button0","#buttonClear","#buttonEquals","#buttonSubtract"];
+rowOrder = ["#row1", "#row2", "#row3", "#row4"]
+rowButtonMap = {
+	"#row1" : ["#button7","#button8","#button9", "#buttonDivide"],
+	"#row2" : ["#button4","#button5","#button6", "#buttonMultiply"],
+	"#row3" : ["#button1","#button2","#button3","#buttonAdd"],
+	"#row4" : ["#button0","#buttonClear","#buttonEquals","#buttonSubtract"]
+}
+	
 
 $(document).ready(function(){
-	$("#calculator").hide();
+	$("#container").hide();
 })	
 
 var selectedSwitch;
 
-//$(#"oneSwitch").click(
+$("#oneSwitch").click(function(){
+	selectedSwitch = 1;
+	$("#settings").hide();
+	$("#container").show();
+	oneSwitch();
+})
+
+$("#twoSwitch").click(function(){
+	selectedSwitch = 2;
+	$("#settings").hide();
+	$("#container").show();
+})
+
 // add the selected class to an item. you can pass this any jquery selector, such as #id or .class
 // calling this will de-select anything currently selected
 function selectItem(name) {
 	$("button").removeClass("cursor");
-	if (name == "#oneSwitch" || name == "#twoSwitch"){
-		$(name).removeClass("selected");
-	}
 	$(name).addClass("cursor")
+}
+
+function selectRow(name) {
+	$("div").removeClass("row_cursor");
+	$(name).addClass("row_cursor")
 }
 
 // gets the currently selected item, and returns its #id
@@ -32,6 +54,18 @@ function getSelectedItem() {
 		return "#" + selected.first().attr('id')
 	} 
 }
+
+function getSelectedRow() {
+	selected = $(".row_cursor"); // this returns an array
+	if (selected.length == 0) {
+		return null;
+	}
+	else {
+		return "#" + selected.first().attr('id')
+	} 
+}
+
+
 
 // the next four functions move the selected UI control
 // this uses the array buttonOrder to know the order of the buttons. so you could change buttonOrder
@@ -51,6 +85,17 @@ function selectNext() {
 		index = buttonOrder.indexOf(selected);
 		index = (index + 1) % buttonOrder.length;
 		selectItem(buttonOrder[index])
+	}
+}
+
+function selectNextRow() {
+	selected = getSelectedRow()
+	if (selected == null) {
+		selectRow(rowOrder[0]);
+	} else {
+		index = rowOrder.indexOf(selected);
+		index = (index + 1) % rowOrder.length;
+		selectRow(rowOrder[index])
 	}
 }
 
@@ -99,6 +144,40 @@ function clickSelectedItem() {
 	}
 }
 
+var state = 'row';
+
+function row_action(){
+	clearInterval(rowint);
+	selectedRow = getSelectedRow();
+	buttonOrder = rowButtonMap[selectedRow];
+	itemint = setInterval(selectNext, 300);
+	state = 'item';
+}
+
+function item_action(){
+	clickSelectedItem();
+	clearInterval(itemint);
+	rowint = setInterval(selectNextRow, 350);
+	state = 'row';
+	$("button").removeClass("cursor");
+}
+	
+
+function oneSwitch(event){
+	rowint = setInterval(selectNextRow, 350);
+	$(document).keypress(function(event) {
+	if(event.keyCode == 32){
+		switch(state){
+			case 'row':
+				row_action();
+				break;
+			case 'item':
+				item_action();				
+		}
+	}
+	});
+}
+
 function twoSwitch(event){
 	if (event.keyCode == 32) {
 		selectNext();
@@ -112,9 +191,6 @@ function twoSwitch(event){
 $(document).keypress(function(event) {
 	if(selectedSwitch == 2){
 		twoSwitch(event);
-	}
-	else if(selectedSwitch == 1) {
-		oneSwitch();
 	}
 })
 

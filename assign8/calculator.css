@@ -10,7 +10,7 @@ body {
 
 #settings {
 	background: #ccc;
-	width: 462px;
+	width: 600px;
 	text-align: center;
 	border: 3px solid black;
 	padding: 16px;
@@ -22,7 +22,7 @@ body {
 .settings button { 
 	font-size: xx-large; 
 	padding: 10px; 
-	width: 200px; 
+	width: 250px; 
 	background: #eee; 
 	border: 2px solid black; 
 	font-family: ocr-a, consolas, monospaced; 
@@ -34,10 +34,23 @@ button.function { background: darkblue; color: white;}
 button:active { background: orange; color: black;}
 button.cursor { background: yellow; color: black;}
 button.selected {background: orange; color: black;}
-div.row_cursor {border: 4px yellow solid;}
+div.row_cursor {border: 4px purple solid;}
 
 #number_input { font-size: xx-large; font-family: ocr-a, consolas, monospaced; background: azure; padding: 8px; text-align: right; width: 416px; font-weight: bold; border: 2px solid black; height: 50px; }
 
 label {
 	display: inline-block; width: 50px; font-weight: bold;
+}
+	
+
+#back{
+	padding: 5px 5px;
+	margin-bottom: 10px;
+}
+
+#back-btn{
+	border: 2px solid black;
+	padding: 5px 5px;
+	background: #eee;
+	text-decoration: None;
 }
