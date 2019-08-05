@@ -15,18 +15,23 @@ $(document).ready(function(){
 })	
 
 var selectedSwitch;
+var startTime;
 
 $("#oneSwitch").click(function(){
 	selectedSwitch = 1;
 	$("#settings").hide();
+	$("#comments").hide();
 	$("#container").show();
 	oneSwitch();
+	startTime = new Date();
 })
 
 $("#twoSwitch").click(function(){
 	selectedSwitch = 2;
 	$("#settings").hide();
 	$("#container").show();
+	$("#comments").hide();
+	startTime = new Date();
 })
 
 // add the selected class to an item. you can pass this any jquery selector, such as #id or .class
@@ -150,7 +155,7 @@ function row_action(){
 	clearInterval(rowint);
 	selectedRow = getSelectedRow();
 	buttonOrder = rowButtonMap[selectedRow];
-	itemint = setInterval(selectNext, 300);
+	itemint = setInterval(selectNext, 350);
 	state = 'item';
 }
 
@@ -175,6 +180,7 @@ function oneSwitch(event){
 				item_action();				
 		}
 	}
+	end(event);
 	});
 }
 
@@ -184,11 +190,17 @@ function twoSwitch(event){
 	} else if (event.keyCode == 13) {
 		clickSelectedItem();
 	}
+	end(event);
 }
 
 // this function responds to user key presses
 // you'll rewrite this to control your interface using some number of keys
 $(document).keypress(function(event) {
+	if(event.keyCode == 113){
+		endTime = new Date();
+		time = endTime - startTime;
+		alert(time);
+	}
 	if(selectedSwitch == 2){
 		twoSwitch(event);
 	}

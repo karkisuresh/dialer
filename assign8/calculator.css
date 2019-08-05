@@ -1,5 +1,5 @@
 body {
-	font-family: helvetica, arial, sans-serif; margin: 16px;
+	font-family: helvetica, arial, sans-serif; margin: 16px 16px;
 }
 #calculator { background: #ccc; padding: 16px; width: 462px; text-align: center; border: 3px solid black}
 
